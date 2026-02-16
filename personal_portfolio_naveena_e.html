@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naveena E | Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: #020617;
+      color: #e5e7eb;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Matrix Background */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Hero */
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(2,6,23,0.7);
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      font-size: 55px;
+      color: #38bdf8;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      font-size: 20px;
+      margin-top: 15px;
+      color: #c7d2fe;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #38bdf8; }
+      to { text-shadow: 0 0 20px #38bdf8; }
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(15,23,42,0.95);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav a {
+      margin: 0 18px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #fff; }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #38bdf8;
+      font-size: 32px;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(15,23,42,0.9);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(56,189,248,0.15);
+      transition: 0.4s;
+      border: 1px solid #1e293b;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 0 35px rgba(56,189,248,0.4);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #1e293b;
+      transition: 0.3s;
+    }
+
+    .item:hover {
+      background: #0f172a;
+      transform: scale(1.05);
+      color: #38bdf8;
+    }
+
+    /* Button */
+    button {
+      background: linear-gradient(135deg,#38bdf8,#6366f1);
+      color: #020617;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover { transform: scale(1.1); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Matrix Background -->
+<canvas id="matrix"></canvas>
+
+<header>
+  <h1>Naveena E</h1>
+  <p>Full Stack Developer | Java | Web | Cloud Ready</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      Computer Science graduate with hands-on experience in Java, JDBC, SQL, and Web Development.
+      Internship-trained at Global Quest Technologies with strong focus on scalable systems,
+      clean code, and real-world software engineering practices.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="card">
+    <h2>Technical Skills</h2>
+    <div class="grid">
+      <div class="item">Java</div>
+      <div class="item">JDBC</div>
+      <div class="item">SQL</div>
+      <div class="item">HTML</div>
+      <div class="item">CSS</div>
+      <div class="item">JavaScript</div>
+      <div class="item">Spring Boot</div>
+      <div class="item">MySQL</div>
+      <div class="item">Git</div>
+      <div class="item">REST APIs</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="card">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Quiz Application</h3>
+        <p>Java JDBC based system with DB integration.</p>
+      </div>
+      <div class="item">
+        <h3>E-Commerce Platform</h3>
+        <p>Cart billing system with MySQL backend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: naveenae19cs029@gmail.com</p>
+    <p>Phone: +91 76767 86946</p>
+    <p>LinkedIn: linkedin.com/in/naveena2823</p>
+    <br />
+    <button>Download Resume</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Naveena E | Digital Portfolio</p>
+</footer>
+
+<script>
+
+/* Section Reveal */
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+},{ threshold: 0.2 });
+
+sections.forEach(section => observer.observe(section));
+
+/* Matrix Animation */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01JAVAHTMLCSSSQLDEVOPS";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for(let i=0;i<columns;i++) drops[i] = 1;
+
+function drawMatrix(){
+  ctx.fillStyle = "rgba(2,6,23,0.08)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#38bdf8";
+  ctx.font = fontSize + "px monospace";
+
+  for(let i=0;i<drops.length;i++){
+    const text = letters.charAt(Math.floor(Math.random()*letters.length));
+    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+    if(drops[i]*fontSize > canvas.height && Math.random()>0.975){
+      drops[i]=0;
+    }
+    drops[i]++;
+  }
+}
+
+setInterval(drawMatrix,40);
+
+window.addEventListener("resize",()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+</script>
+
+</body>
+</html>
